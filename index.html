@@ -157,6 +157,34 @@ function createMeteor() {
 
 setInterval(createMeteor, 3000);
 
+
+// ==============================
+// 🔥 TAMBAHAN: HUJAN METEOR 10 SEKALIGUS
+// ==============================
+
+function createMeteorShower() {
+    for (let i = 0; i < 10; i++) {
+
+        let meteor = document.createElement("div");
+        meteor.className = "meteor";
+
+        meteor.style.top = Math.random() * 40 + "vh";
+        meteor.style.left = Math.random() * 100 + "vw";
+
+        meteor.style.height = (80 + Math.random() * 120) + "px";
+        meteor.style.animationDuration = (0.5 + Math.random()) + "s";
+
+        document.body.appendChild(meteor);
+
+        setTimeout(() => {
+            meteor.remove();
+        }, 2000);
+    }
+}
+
+setInterval(createMeteorShower, 5000);
+
+
 // 📲 WhatsApp
 function kirimWA() {
     let nama = document.getElementById("nama").value;
@@ -177,4 +205,4 @@ Alasan: ${alasan}`;
 </script>
 
 </body>
-  </html>
+</html>
